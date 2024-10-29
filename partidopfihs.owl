@@ -1,0 +1,294 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns="http://www.owl-ontologies.com/Ontology1729551021.owl#"
+    xmlns:schema="https://schema.org/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:eschema="https://schema.org/extended/"
+  xml:base="http://www.owl-ontologies.com/Ontology1729551021.owl">
+  <owl:Ontology rdf:about=""/>
+  <owl:Class rdf:about="https://schema.org/Event">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="https://schema.org/extended/identifierevento"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="https://schema.org/extended/Minute"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="https://schema.org/about"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="https://schema.org/actor"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Match Event</rdfs:label>
+    <rdfs:label xml:lang="es">Evento de Partido</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="https://schema.org/SportsTeam">
+    <rdfs:label xml:lang="es">Alineacion</rdfs:label>
+    <rdfs:label xml:lang="en">Line Up</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="https://schema.org/extended/classification"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="https://schema.org/subOrganization"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="https://schema.org/extended/PersonLinedUp">
+    <rdfs:label xml:lang="es">Jugador alineado</rdfs:label>
+    <rdfs:label xml:lang="en">Lined Up player</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="https://schema.org/extended/bibNumber"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="https://schema.org/extended/type"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="https://schema.org/extended/player"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="https://schema.org/extended/position"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="https://schema.org/SportsEvent">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="https://schema.org/extended/result"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="https://schema.org/extended/identifierpartido"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="https://schema.org/extended/namePartido"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="https://schema.org/date"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="https://schema.org/extended/tounamentId"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="https://schema.org/awayTeam"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="https://schema.org/homeTeam"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="https://schema.org/extended/type">
+    <rdfs:domain rdf:resource="https://schema.org/extended/PersonLinedUp"/>
+    <rdfs:label xml:lang="es">Tipo</rdfs:label>
+    <rdfs:label xml:lang="en">Type</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://schema.org/extended/position">
+    <rdfs:domain rdf:resource="https://schema.org/extended/PersonLinedUp"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://schema.org/actor">
+    <rdfs:label xml:lang="en">Player</rdfs:label>
+    <rdfs:label xml:lang="es">Jugador</rdfs:label>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >TODO:</owl:versionInfo>
+    <rdfs:domain rdf:resource="https://schema.org/Event"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://schema.org/extended/player">
+    <rdfs:domain rdf:resource="https://schema.org/extended/PersonLinedUp"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://schema.org/awayTeam">
+    <rdfs:label xml:lang="es">Visitante</rdfs:label>
+    <rdfs:label xml:lang="en">Away</rdfs:label>
+    <rdfs:range rdf:resource="https://schema.org/SportsTeam"/>
+    <rdfs:domain rdf:resource="https://schema.org/SportsEvent"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://schema.org/subOrganization">
+    <rdfs:domain rdf:resource="https://schema.org/SportsTeam"/>
+    <rdfs:label xml:lang="es">Club</rdfs:label>
+    <rdfs:label xml:lang="en">Club</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://schema.org/coach">
+    <rdfs:domain rdf:resource="https://schema.org/SportsTeam"/>
+    <rdfs:label xml:lang="es">Entrenadores</rdfs:label>
+    <rdfs:label xml:lang="en">coach</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://schema.org/extended/i_edition">
+    <rdfs:domain rdf:resource="https://schema.org/SportsEvent"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://schema.org/homeTeam">
+    <rdfs:range rdf:resource="https://schema.org/SportsTeam"/>
+    <rdfs:label xml:lang="es">Local</rdfs:label>
+    <rdfs:label xml:lang="en">Home</rdfs:label>
+    <rdfs:domain rdf:resource="https://schema.org/SportsEvent"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://schema.org/athlete">
+    <rdfs:range rdf:resource="https://schema.org/extended/PersonLinedUp"/>
+    <rdfs:domain rdf:resource="https://schema.org/SportsTeam"/>
+    <rdfs:label xml:lang="es">Jugadores</rdfs:label>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Players</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://schema.org/about">
+    <rdfs:domain rdf:resource="https://schema.org/Event"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://schema.org/subEvent">
+    <rdfs:domain rdf:resource="https://schema.org/SportsEvent"/>
+    <rdfs:range rdf:resource="https://schema.org/Event"/>
+    <rdfs:label xml:lang="es">Acontecimientos</rdfs:label>
+    <rdfs:label xml:lang="en">match Events</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://schema.org/extended/tounamentId">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="https://schema.org/SportsEvent"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://schema.org/extended/referee">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="https://schema.org/SportsEvent"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://schema.org/extended/identifierevento">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="https://schema.org/Event"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://schema.org/extended/bibNumber">
+    <rdfs:label xml:lang="es">Dorsal</rdfs:label>
+    <rdfs:label xml:lang="en">Bib</rdfs:label>
+    <rdfs:domain rdf:resource="https://schema.org/extended/PersonLinedUp"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://schema.org/extended/Minute">
+    <rdfs:label xml:lang="es">min.</rdfs:label>
+    <rdfs:label xml:lang="en">min.</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:domain rdf:resource="https://schema.org/Event"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://schema.org/extended/identifierpartido">
+    <rdfs:domain rdf:resource="https://schema.org/SportsEvent"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://schema.org/date">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:label xml:lang="es">Fecha</rdfs:label>
+    <rdfs:label xml:lang="en">Date</rdfs:label>
+    <rdfs:domain rdf:resource="https://schema.org/SportsEvent"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://schema.org/extended/classification">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:label xml:lang="es">Clas.</rdfs:label>
+    <rdfs:label xml:lang="en">Clas.</rdfs:label>
+    <rdfs:domain rdf:resource="https://schema.org/SportsTeam"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://schema.org/extended/namePartido">
+    <rdfs:domain rdf:resource="https://schema.org/SportsEvent"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://schema.org/extended/result">
+    <rdfs:label xml:lang="es">resultado</rdfs:label>
+    <rdfs:label xml:lang="en">reesultado</rdfs:label>
+    <rdfs:domain rdf:resource="https://schema.org/SportsEvent"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.3.1, Build 430)  http://protege.stanford.edu -->

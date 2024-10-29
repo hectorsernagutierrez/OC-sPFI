@@ -1,0 +1,31 @@
+<config>
+    <ConfiguracionGeneral>
+        <namespace>posicionpfihs</namespace>
+        <idiomasOnto>
+            <idiomaOnto>es</idiomaOnto>
+        </idiomasOnto>
+        <TituloDoc EntidadID="https://schema.org/extended/Position">https://schema.org/name</TituloDoc>
+        <HtmlNuevo>true</HtmlNuevo>
+    </ConfiguracionGeneral>
+    <EspefPropiedad>
+        <Propiedad  ID="https://schema.org/name" EntidadID="https://schema.org/extended/Position">
+            <AtrNombre>https://schema.org/name</AtrNombre>
+            <AtrNombreLectura>https://schema.org/name</AtrNombreLectura>
+        </Propiedad>
+    </EspefPropiedad>
+    <EspefEntidad>
+        <Entidad  ID="https://schema.org/extended/Position">
+            <AtrNombre>https://schema.org/extended/Position</AtrNombre>
+            <AtrNombreLectura>https://schema.org/extended/Position</AtrNombreLectura>
+            <OrdenEntidad>
+                <Grupo class="formtheme02">
+                    <Grupo class="fieldset">
+                        <Grupo Tipo="fieldset" class="mediumLabels">
+                            <NameProp>https://schema.org/name</NameProp>
+                        </Grupo>
+                    </Grupo>
+                </Grupo>
+            </OrdenEntidad>
+        </Entidad>
+    </EspefEntidad>
+</config>

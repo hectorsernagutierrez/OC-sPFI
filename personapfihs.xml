@@ -1,0 +1,327 @@
+<config>
+    <ConfiguracionGeneral>
+        <namespace>personapfihs</namespace>
+        <idiomasOnto>
+            <idiomaOnto>es</idiomaOnto>
+        </idiomasOnto>
+        <ocultarTituloDescpImgDoc></ocultarTituloDescpImgDoc>
+        <TituloDoc EntidadID="https://schema.org/Person">https://schema.org/name</TituloDoc>
+        <DescripcionDoc EntidadID="https://schema.org/Person">https://schema.org/name</DescripcionDoc>
+        <HtmlNuevo>true</HtmlNuevo>
+        <CategorizacionTesauroGnossObligatoria>true</CategorizacionTesauroGnossObligatoria>        
+        <OcultarBloquePrivacidadSeguridadEdicion></OcultarBloquePrivacidadSeguridadEdicion>
+        <OcultarBloqueCompartirEdicion></OcultarBloqueCompartirEdicion>
+        <OcultarBloquePropiedadIntelectualEdicion></OcultarBloquePropiedadIntelectualEdicion>
+        <OcultarEditoresDoc></OcultarEditoresDoc>
+        <OcultarAutoresDoc></OcultarAutoresDoc>
+        <OcultarComentarios></OcultarComentarios>
+    </ConfiguracionGeneral>
+    <EspefPropiedad>
+        <Propiedad ID="https://schema.org/validFrom" EntidadID="https://schema.org/PriceSpecification">
+            <AtrNombre xml:lang="es">Fecha del Valor</AtrNombre>
+            <AtrNombreLectura xml:lang="es">Fecha del Valor</AtrNombreLectura>
+            <AtrNombre xml:lang="en">Valuation dated</AtrNombre>
+            <AtrNombreLectura xml:lang="en">Valuation dated</AtrNombreLectura>
+        </Propiedad>
+        <Propiedad ID="https://schema.org/extended/identifier" EntidadID="https://schema.org/PriceSpecification">
+            <AtrNombre xml:lang="es">ID</AtrNombre>
+            <AtrNombreLectura xml:lang="es">ID</AtrNombreLectura>
+        </Propiedad>
+        <Propiedad ID="https://schema.org/price" EntidadID="https://schema.org/PriceSpecification">
+            <AtrNombre xml:lang="es">Valor</AtrNombre>
+            <AtrNombreLectura xml:lang="es">Valor</AtrNombreLectura>
+            <AtrNombre xml:lang="en">Value</AtrNombre>
+            <AtrNombreLectura xml:lang="en">Value</AtrNombreLectura>
+        </Propiedad>
+        <Propiedad ID="https://schema.org/addressLocality" EntidadID="https://schema.org/PostalAddress">
+            <AtrNombre xml:lang="en">City</AtrNombre>
+            <AtrNombreLectura xml:lang="en">City</AtrNombreLectura>
+            <AtrNombre xml:lang="es">Ciudad</AtrNombre>
+            <AtrNombreLectura xml:lang="es">Ciudad</AtrNombreLectura>
+        </Propiedad>
+        <Propiedad ID="https://schema.org/addressCountry" EntidadID="https://schema.org/PostalAddress">
+            <AtrNombre xml:lang="es">Pais</AtrNombre>
+            <AtrNombreLectura xml:lang="es">Pais</AtrNombreLectura>
+            <AtrNombre xml:lang="en">Country</AtrNombre>
+            <AtrNombreLectura xml:lang="en">Country</AtrNombreLectura>
+        </Propiedad>
+        <Propiedad ID="http://gnossg.gnoss.com/countryBirthNode" EntidadID="http://gnossg.gnoss.com/NationalityPath">
+            <AtrNombre></AtrNombre>
+            <AtrNombreLectura></AtrNombreLectura>
+            <SeleccionEntidad>
+                <TipoSeleccion>Tesauro</TipoSeleccion>
+                <Grafo>taxonomypfihs.owl</Grafo>
+                <UrlPropiedad>pais</UrlPropiedad>
+                <TipoPresentacion link="#schema:nationality@@@gnossg:countryBirthNode">Arbol</TipoPresentacion>
+            </SeleccionEntidad>
+        </Propiedad>
+        <Propiedad ID="https://schema.org/networth" EntidadID="https://schema.org/Person">
+            <AtrNombre xml:lang="es">Historial Valores Mercado</AtrNombre>
+            <AtrNombreLectura xml:lang="es">Historial Valores Mercado</AtrNombreLectura>
+            <AtrNombre xml:lang="en">Historical Market Values</AtrNombre>
+            <AtrNombreLectura xml:lang="en">Historical Market Values</AtrNombreLectura>
+        </Propiedad>
+        <Propiedad ID="https://schema.org/extended/foot" EntidadID="https://schema.org/Person">
+            <AtrNombre xml:lang="es">Pie habil</AtrNombre>
+            <AtrNombreLectura xml:lang="es">Pie habil</AtrNombreLectura>
+            <AtrNombre xml:lang="en">Preferred foot</AtrNombre>
+            <AtrNombreLectura xml:lang="en">Preferred foot</AtrNombreLectura>
+        </Propiedad>
+        <Propiedad ID="https://schema.org/identifier" EntidadID="https://schema.org/Person">
+            <AtrNombre >Id</AtrNombre>
+            <AtrNombreLectura >Id</AtrNombreLectura>
+        </Propiedad>
+        <Propiedad ID="https://schema.org/extended/i_club" EntidadID="https://schema.org/Person">
+            <AtrNombre xml:lang="es">Club</AtrNombre>
+            <AtrNombreLectura xml:lang="es">Club</AtrNombreLectura>
+            <AtrNombre xml:lang="en">Club</AtrNombre>
+            <AtrNombreLectura xml:lang="en">Club</AtrNombreLectura>
+            <SeleccionEntidad>
+                <TipoSeleccion>Autocompletar</TipoSeleccion>
+                <LinkARecurso IrAComunidad="true"></LinkARecurso>
+                <Grafo>clubpfihs.owl</Grafo>
+                <UrlTipoEntSolicitada>https://schema.org/SportsClub</UrlTipoEntSolicitada>
+                <PropsEntEdicion>
+                    <NameProp>https://schema.org/name</NameProp>
+                </PropsEntEdicion>
+                <PropsEntLectura>
+                    <Propiedad ID="https://schema.org/name" EntidadID="https://schema.org/SportsClub">
+                        <AtrNombre xml:lang="es">Nombre</AtrNombre>
+                        <AtrNombreLectura xml:lang="es">Nombre</AtrNombreLectura>
+                        <AtrNombre xml:lang="en">Name</AtrNombre>
+                        <AtrNombreLectura xml:lang="en">Name</AtrNombreLectura>
+                    </Propiedad>
+                    <Propiedad ID="https://schema.org/logo" EntidadID="https://schema.org/SportsClub">
+                        <AtrNombre>Logo</AtrNombre>
+                        <AtrNombreLectura>Logo</AtrNombreLectura>
+                        <MultiIdioma>false</MultiIdioma>
+                        <TipoCampo>ImagenExterna</TipoCampo>
+                    </Propiedad>
+                </PropsEntLectura>
+                <Reciproca></Reciproca>
+                
+                <ConsultaReciproca>
+                    <![CDATA[SELECT DISTINCT(?club)
+                    WHERE {
+                    ?club a <https://schema.org/SportsClub>. 
+                    ?club <https://schema.org/SportsTeam> ?equipo.
+                     {
+                        ?equipo <https://schema.org/athlete> ?persona.
+                     } UNION {
+                        ?equipo <https://schema.org/coach> ?persona.
+                    }                    
+                    FILTER (?persona = @EntidadID@)}]]>
+                </ConsultaReciproca>
+            </SeleccionEntidad>
+
+
+        </Propiedad>
+
+
+        <Propiedad ID="https://schema.org/nationality" EntidadID="https://schema.org/Person">
+            <AtrNombre xml:lang="en">Nationality</AtrNombre>
+            <AtrNombreLectura xml:lang="en">Nationality</AtrNombreLectura>
+            <AtrNombre xml:lang="es">Nacionalidad</AtrNombre>
+            <AtrNombreLectura xml:lang="es">Nacionalidad</AtrNombreLectura>
+        </Propiedad>
+        <Propiedad ID="https://schema.org/birthPlace" EntidadID="https://schema.org/Person">
+            <AtrNombre xml:lang="es">Lugar de Nacimiento</AtrNombre>
+            <AtrNombreLectura xml:lang="es">Lugar de Nacimiento</AtrNombreLectura>
+            <AtrNombre xml:lang="en">Place of birth</AtrNombre>
+            <AtrNombreLectura xml:lang="en">Place of birth</AtrNombreLectura>
+        </Propiedad>
+        <Propiedad ID="https://schema.org/award" EntidadID="https://schema.org/Person">
+            <AtrNombre xml:lang="es">Premios</AtrNombre>
+            <AtrNombreLectura xml:lang="es">Premios</AtrNombreLectura>
+            <AtrNombre xml:lang="en">Awards</AtrNombre>
+            <AtrNombreLectura xml:lang="en">Awards</AtrNombreLectura>
+        </Propiedad>
+        <Propiedad ID="https://schema.org/height" EntidadID="https://schema.org/Person">
+            <AtrNombre xml:lang="es">Altura</AtrNombre>
+            <AtrNombreLectura xml:lang="es">Altura</AtrNombreLectura>
+            <AtrNombre xml:lang="en">Height</AtrNombre>
+            <AtrNombreLectura xml:lang="en">Height</AtrNombreLectura>
+        </Propiedad>
+        <Propiedad ID="https://schema.org/description" EntidadID="https://schema.org/Person">
+            <AtrNombre xml:lang="es">Descripción</AtrNombre>
+            <AtrNombreLectura xml:lang="es">Descripción</AtrNombreLectura>
+            <AtrNombre xml:lang="en">Description</AtrNombre>
+            <AtrNombreLectura xml:lang="en">Description</AtrNombreLectura>
+        </Propiedad>
+        <Propiedad ID="https://schema.org/birthDate" EntidadID="https://schema.org/Person">
+            <AtrNombre xml:lang="es">Fecha Nacimiento</AtrNombre>
+            <AtrNombreLectura xml:lang="es">Fecha Nacimiento</AtrNombreLectura>
+            <AtrNombre xml:lang="en">Birth Date</AtrNombre>
+            <AtrNombreLectura xml:lang="en">Birth Date</AtrNombreLectura>
+        </Propiedad>
+        <Propiedad ID="https://schema.org/image" EntidadID="https://schema.org/Person">
+            <AtrNombre>Image</AtrNombre>
+            <AtrNombreLectura>Image</AtrNombreLectura>
+            <TipoCampo>ImagenExterna</TipoCampo>           
+        </Propiedad>
+        <Propiedad ID="https://schema.org/name" EntidadID="https://schema.org/Person">
+            <AtrNombre xml:lang="en">Name</AtrNombre>
+            <AtrNombreLectura xml:lang="en">Name</AtrNombreLectura>
+            <AtrNombre xml:lang="es">Nombre</AtrNombre>
+            <AtrNombreLectura xml:lang="es">Nombre</AtrNombreLectura>
+        </Propiedad>
+    </EspefPropiedad>
+    <EspefEntidad>
+        <Entidad ID="https://schema.org/PriceSpecification">
+            <AtrNombre>https://schema.org/PriceSpecification</AtrNombre>
+            <AtrNombreLectura>https://schema.org/PriceSpecification</AtrNombreLectura>
+            <OrdenEntidad>
+                <Grupo class="formtheme02">
+                    <Grupo class="fieldset">
+                        <Grupo Tipo="fieldset" class="mediumLabels">
+                            <NameProp>https://schema.org/validFrom</NameProp>
+                            <NameProp>https://schema.org/price</NameProp>
+                        </Grupo>
+                    </Grupo>
+                </Grupo>
+            </OrdenEntidad>
+            <OrdenEntidadLectura>
+                <Grupo classLectura="contentGroup contenidoPrincipal">
+                    <Grupo classLectura="group title">
+                        <Grupo Tipo="titulo">
+                            <NameProp>@@@TITULO</NameProp>
+                        </Grupo>
+                        <Grupo Tipo="subtitulo">
+                            <NameProp>@@@SUBTITULO</NameProp>
+                        </Grupo>
+                    </Grupo>
+                </Grupo>
+                <Grupo classLectura="group content semanticView">
+                    <Grupo classLectura="group group_info">
+                        <AtrNombreGrupo>Propiedades</AtrNombreGrupo>
+                        <Grupo classLectura="contentGroup">
+                            <NameProp>https://schema.org/validFrom</NameProp>
+                            <NameProp>https://schema.org/price</NameProp>
+                        </Grupo>
+                    </Grupo>
+                </Grupo>
+            </OrdenEntidadLectura>
+        </Entidad>
+        <Entidad ID="https://schema.org/PostalAddress">
+            <AtrNombre>https://schema.org/PostalAddress</AtrNombre>
+            <AtrNombreLectura>https://schema.org/PostalAddress</AtrNombreLectura>
+            <OrdenEntidad>
+                <Grupo class="formtheme02">
+                    <Grupo class="fieldset">
+                        <Grupo Tipo="fieldset" class="mediumLabels">
+                            <NameProp>https://schema.org/addressLocality</NameProp>
+                            <NameProp>https://schema.org/addressCountry</NameProp>
+                        </Grupo>
+                    </Grupo>
+                </Grupo>
+            </OrdenEntidad>
+            <OrdenEntidadLectura>
+                <Grupo classLectura="contentGroup contenidoPrincipal">
+                    <Grupo classLectura="group title">
+                        <Grupo Tipo="titulo">
+                            <NameProp>@@@TITULO</NameProp>
+                        </Grupo>
+                        <Grupo Tipo="subtitulo">
+                            <NameProp>@@@SUBTITULO</NameProp>
+                        </Grupo>
+                    </Grupo>
+                </Grupo>
+                <Grupo classLectura="group content semanticView">
+                    <Grupo classLectura="group group_info">
+                        <AtrNombreGrupo>Propiedades</AtrNombreGrupo>
+                        <Grupo classLectura="contentGroup">
+                            <NameProp>https://schema.org/addressLocality</NameProp>
+                            <NameProp>https://schema.org/addressCountry</NameProp>
+                        </Grupo>
+                    </Grupo>
+                </Grupo>
+            </OrdenEntidadLectura>
+        </Entidad>
+        <Entidad ID="http://gnossg.gnoss.com/NationalityPath">
+            <AtrNombre>http://gnossg.gnoss.com/NationalityPath</AtrNombre>
+            <AtrNombreLectura>http://gnossg.gnoss.com/NationalityPath</AtrNombreLectura>
+            <OrdenEntidad>
+                <Grupo class="formtheme02">
+                    <Grupo class="fieldset">
+                        <Grupo Tipo="fieldset" class="mediumLabels">
+                            <NameProp>http://gnossg.gnoss.com/countryBirthNode</NameProp>
+                        </Grupo>
+                    </Grupo>
+                </Grupo>
+            </OrdenEntidad>
+            <OrdenEntidadLectura>
+                <Grupo classLectura="contentGroup contenidoPrincipal">
+                    <Grupo classLectura="group title">
+                        <Grupo Tipo="titulo">
+                            <NameProp>@@@TITULO</NameProp>
+                        </Grupo>
+                        <Grupo Tipo="subtitulo">
+                            <NameProp>@@@SUBTITULO</NameProp>
+                        </Grupo>
+                    </Grupo>
+                </Grupo>
+                <Grupo classLectura="group content semanticView">
+                    <Grupo classLectura="group group_info">
+                        <AtrNombreGrupo>Propiedades</AtrNombreGrupo>
+                        <Grupo classLectura="contentGroup">
+                            <NameProp>http://gnossg.gnoss.com/countryBirthNode</NameProp>
+                        </Grupo>
+                    </Grupo>
+                </Grupo>
+            </OrdenEntidadLectura>
+        </Entidad>
+        <Entidad ID="https://schema.org/Person">
+            <AtrNombre>https://schema.org/Person</AtrNombre>
+            <AtrNombreLectura>https://schema.org/Person</AtrNombreLectura>
+            <OrdenEntidad>
+                <Grupo class="formtheme02">
+                    <Grupo class="fieldset">
+                        <Grupo Tipo="fieldset" class="mediumLabels">
+                            <NameProp>https://schema.org/name</NameProp>
+                            <NameProp>https://schema.org/image</NameProp>
+                            <NameProp>https://schema.org/birthDate</NameProp>                            
+                            <NameProp>https://schema.org/nationality</NameProp>
+                            <NameProp>https://schema.org/birthPlace</NameProp>
+                            <NameProp>https://schema.org/award</NameProp>
+                            <NameProp>https://schema.org/height</NameProp>
+                            <NameProp>https://schema.org/extended/foot</NameProp>
+                            <NameProp>https://schema.org/description</NameProp>  
+                            <NameProp>https://schema.org/networth</NameProp>                                               
+                           
+                        </Grupo>
+                    </Grupo>
+                </Grupo>
+            </OrdenEntidad>
+            <OrdenEntidadLectura>
+                <Grupo classLectura="contentGroup contenidoPrincipal">
+                    <Grupo classLectura="group title">
+                        <Grupo Tipo="titulo">
+                            <NameProp>@@@TITULO</NameProp>
+                        </Grupo>
+                        <Grupo Tipo="subtitulo">
+                            <NameProp>@@@SUBTITULO</NameProp>
+                        </Grupo>
+                    </Grupo>
+                </Grupo>
+                <Grupo classLectura="group content semanticView">
+                    <Grupo classLectura="group group_info">
+                        <AtrNombreGrupo>Propiedades</AtrNombreGrupo>
+                        <Grupo classLectura="contentGroup">
+                            <NameProp>https://schema.org/name</NameProp>
+                            <NameProp>https://schema.org/image</NameProp>
+                            <NameProp>https://schema.org/extended/i_club</NameProp>
+                            <NameProp>https://schema.org/nationality</NameProp>
+                            <NameProp>https://schema.org/birthPlace</NameProp>
+                            <NameProp>https://schema.org/award</NameProp>
+                            <NameProp>https://schema.org/height</NameProp>
+                            <NameProp>https://schema.org/extended/foot</NameProp>
+                            <NameProp>https://schema.org/description</NameProp>
+                            <NameProp>https://schema.org/birthDate</NameProp>            
+                            <NameProp>https://schema.org/networth</NameProp>
+                        </Grupo>
+                    </Grupo>
+                </Grupo>
+            </OrdenEntidadLectura>
+        </Entidad>
+    </EspefEntidad>
+</config>

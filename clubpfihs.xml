@@ -1,0 +1,415 @@
+<config>
+    <ConfiguracionGeneral>
+        <namespace>clubpfihs</namespace>
+        <idiomasOnto>
+            <idiomaOnto>es</idiomaOnto>
+        </idiomasOnto>
+        <ocultarTituloDescpImgDoc></ocultarTituloDescpImgDoc>
+        <TituloDoc EntidadID="https://schema.org/SportsClub">https://schema.org/name</TituloDoc>
+        <DescripcionDoc EntidadID="https://schema.org/SportsClub">https://schema.org/name</DescripcionDoc>
+        <HtmlNuevo>true</HtmlNuevo>
+        <CategorizacionTesauroGnossObligatoria>true</CategorizacionTesauroGnossObligatoria>        
+        <OcultarBloquePrivacidadSeguridadEdicion></OcultarBloquePrivacidadSeguridadEdicion>
+        <OcultarBloqueCompartirEdicion></OcultarBloqueCompartirEdicion>
+        <OcultarBloquePropiedadIntelectualEdicion></OcultarBloquePropiedadIntelectualEdicion>
+        <OcultarEditoresDoc></OcultarEditoresDoc>
+        <OcultarAutoresDoc></OcultarAutoresDoc>
+        <OcultarComentarios></OcultarComentarios>
+    </ConfiguracionGeneral>
+    <EspefPropiedad>
+        <Propiedad ID="https://schema.org/extended/season" EntidadID="https://schema.org/SportsTeam">
+            <AtrNombre xml:lang="en">Season</AtrNombre>
+            <AtrNombreLectura xml:lang="en">Season</AtrNombreLectura>
+            <AtrNombre xml:lang="es">Temporada</AtrNombre>
+            <AtrNombreLectura xml:lang="es">Temporada</AtrNombreLectura>
+            <SeleccionEntidad>
+                <TipoSeleccion>Combo</TipoSeleccion>
+                <Grafo>temporadapfihs.owl</Grafo>
+                <UrlTipoEntSolicitada>https://schema.org/Thing</UrlTipoEntSolicitada>                
+                <PropsEntEdicion>
+                    <NameProp>https://schema.org/name</NameProp>
+                </PropsEntEdicion>
+                <PropsEntLectura>
+                    <Propiedad ID="https://schema.org/name" EntidadID="https://schema.org/Thing">
+                        <AtrNombre xml:lang="es">Nombre</AtrNombre>
+                        <AtrNombreLectura xml:lang="es">Nombre</AtrNombreLectura>
+                        <AtrNombre xml:lang="en">Name</AtrNombre>
+                        <AtrNombreLectura xml:lang="en">Name</AtrNombreLectura>
+                    </Propiedad>                    
+                </PropsEntLectura>
+            </SeleccionEntidad>
+        </Propiedad>  
+
+<Propiedad  ID="https://schema.org/extended/i_winner" EntidadID="https://schema.org/SportsClub">
+            <AtrNombre xml:lang="en">winned edition</AtrNombre>
+            <AtrNombreLectura xml:lang="en">winned edition</AtrNombreLectura>
+            <AtrNombre xml:lang="es">Torneo edicion ganado</AtrNombre>
+            <AtrNombreLectura xml:lang="es">Torneo edicion ganado</AtrNombreLectura>
+            <SeleccionEntidad>						
+                <TipoSeleccion>Autocompletar</TipoSeleccion>			
+                <LinkARecurso IrAComunidad="true"></LinkARecurso>				
+                <Grafo>torneoedicionpfihs.owl</Grafo>
+                <UrlTipoEntSolicitada>https://schema.org/extended/SportsTournamentEdition</UrlTipoEntSolicitada>
+                <PropsEntEdicion>
+                    <NameProp>https://schema.org/name</NameProp>
+                </PropsEntEdicion>
+                <PropsEntLectura>
+                     <Propiedad  ID="https://schema.org/name" EntidadID="https://schema.org/extended/SportsTournamentEdition">
+            <AtrNombre xml:lang="es">Nombre</AtrNombre>
+            <AtrNombreLectura xml:lang="es">Nombre</AtrNombreLectura>
+            <AtrNombre xml:lang="en">Name</AtrNombre>
+            <AtrNombreLectura xml:lang="en">Name</AtrNombreLectura>
+        </Propiedad>
+                </PropsEntLectura>
+                <Reciproca></Reciproca>	
+                <!-- Consulta para obtener los autores de un determindado documento (el que estoy consulando) -->
+                <ConsultaReciproca><![CDATA[SELECT DISTINCT(?edicion)
+                    WHERE {
+                    ?edicion a <https://schema.org/extended/SportsTournamentEdition>. 
+                    ?edicion <https://schema.org/extended/winner> ?club 
+                    FILTER (?club = @EntidadID@)}]]></ConsultaReciproca>
+            </SeleccionEntidad>
+        </Propiedad>
+
+
+
+<Propiedad  ID="https://schema.org/extended/i_participant" EntidadID="https://schema.org/SportsClub">
+            <AtrNombre xml:lang="en">Participated in edition</AtrNombre>
+            <AtrNombreLectura xml:lang="en">Participated in edition</AtrNombreLectura>
+            <AtrNombre xml:lang="es">Torneo edicion participado</AtrNombre>
+            <AtrNombreLectura xml:lang="es">Torneo edicion participado</AtrNombreLectura>
+            <SeleccionEntidad>						
+                <TipoSeleccion>Autocompletar</TipoSeleccion>			
+                <LinkARecurso IrAComunidad="true"></LinkARecurso>				
+                <Grafo>torneoedicionpfihs.owl</Grafo>
+                <UrlTipoEntSolicitada>https://schema.org/extended/SportsTournamentEdition</UrlTipoEntSolicitada>
+                <PropsEntEdicion>
+                    <NameProp>https://schema.org/name</NameProp>
+                </PropsEntEdicion>
+                <PropsEntLectura>
+                     <Propiedad  ID="https://schema.org/name" EntidadID="https://schema.org/extended/SportsTournamentEdition">
+            <AtrNombre xml:lang="es">Nombre</AtrNombre>
+            <AtrNombreLectura xml:lang="es">Nombre</AtrNombreLectura>
+            <AtrNombre xml:lang="en">Name</AtrNombre>
+            <AtrNombreLectura xml:lang="en">Name</AtrNombreLectura>
+        </Propiedad>
+                </PropsEntLectura>
+                <Reciproca></Reciproca>	
+                <!-- Consulta para obtener los autores de un determindado documento (el que estoy consulando) -->
+                <ConsultaReciproca><![CDATA[SELECT DISTINCT(?edicion)
+                    WHERE {
+                    ?edicion a <https://schema.org/extended/SportsTournamentEdition>. 
+                    ?edicion <https://schema.org/extended/particpants> ?club 
+                    FILTER (?club = @EntidadID@)}]]></ConsultaReciproca>
+            </SeleccionEntidad>
+        </Propiedad>		
+		<Propiedad  ID="https://schema.org/extended/i_matches" EntidadID="https://schema.org/SportsClub">
+            <AtrNombre xml:lang="en">Participated in match</AtrNombre>
+            <AtrNombreLectura xml:lang="en">Participated in match</AtrNombreLectura>
+            <AtrNombre xml:lang="es">partido participado</AtrNombre>
+            <AtrNombreLectura xml:lang="es">Partido participado</AtrNombreLectura>
+            <SeleccionEntidad>						
+                <TipoSeleccion>Autocompletar</TipoSeleccion>			
+                <LinkARecurso IrAComunidad="true"></LinkARecurso>				
+                <Grafo>partidopfihs.owl</Grafo>
+                <UrlTipoEntSolicitada>https://schema.org/extended/SportsTournamentEdition</UrlTipoEntSolicitada>
+                <PropsEntEdicion>
+                    <NameProp>https://schema.org/extended/namePartido</NameProp>
+                </PropsEntEdicion>
+                <PropsEntLectura>
+                     <Propiedad  ID="https://schema.org/extended/namePartido" EntidadID="https://schema.org/SportsEvent">
+            <AtrNombre xml:lang="es">Nombre</AtrNombre>
+            <AtrNombreLectura xml:lang="es">Nombre</AtrNombreLectura>
+            <AtrNombre xml:lang="en">Name</AtrNombre>
+            <AtrNombreLectura xml:lang="en">Name</AtrNombreLectura>
+        </Propiedad>
+                </PropsEntLectura>
+                <Reciproca></Reciproca>	
+                <!-- Consulta para obtener los autores de un determindado documento (el que estoy consulando) -->
+                <ConsultaReciproca><![CDATA[SELECT DISTINCT(?partido)
+                    WHERE {
+                    ?partido a <https://schema.org/SportsEvent>. 
+                    {?partido <https://schema.org/awayTeam> ?equipo .}
+UNION{
+?partido <https://schema.org/homeTeam> ?equipo.
+}					
+
+?equipo <https://schema.org/subOrganization> ?club
+                    FILTER (?club = @EntidadID@)}]]></ConsultaReciproca>
+            </SeleccionEntidad>
+        </Propiedad>		
+        <Propiedad ID="https://schema.org/coach" EntidadID="https://schema.org/SportsTeam">
+            <AtrNombre xml:lang="es">Entrenador</AtrNombre>
+            <AtrNombreLectura xml:lang="es">Entrenador</AtrNombreLectura>
+            <AtrNombre xml:lang="en">Coach</AtrNombre>
+            <AtrNombreLectura xml:lang="en">Coach</AtrNombreLectura>
+            <SeleccionEntidad>
+                <TipoSeleccion>Autocompletar</TipoSeleccion>
+                <Grafo>personapfihs.owl</Grafo>
+                <UrlTipoEntSolicitada>https://schema.org/Person</UrlTipoEntSolicitada>
+                <LinkARecurso IrAComunidad="true"></LinkARecurso>	
+                <PropsEntEdicion>
+                    <NameProp>https://schema.org/name</NameProp>
+                </PropsEntEdicion>
+                <PropsEntLectura>
+                    <Propiedad ID="https://schema.org/name" EntidadID="https://schema.org/Person">
+                        <AtrNombre xml:lang="es">Nombre</AtrNombre>
+                        <AtrNombreLectura xml:lang="es">Nombre</AtrNombreLectura>
+                        <AtrNombre xml:lang="en">Name</AtrNombre>
+                        <AtrNombreLectura xml:lang="en">Name</AtrNombreLectura>
+                    </Propiedad>                    
+                </PropsEntLectura>
+            </SeleccionEntidad>
+        </Propiedad>
+        <Propiedad ID="https://schema.org/athlete" EntidadID="https://schema.org/SportsTeam">
+            <AtrNombre xml:lang="es">Jugadores</AtrNombre>
+            <AtrNombreLectura xml:lang="es">Jugadores</AtrNombreLectura>
+            <AtrNombre xml:lang="en">Players</AtrNombre>
+            <AtrNombreLectura xml:lang="en">Players</AtrNombreLectura>
+            <SeleccionEntidad>
+                <TipoSeleccion>Autocompletar</TipoSeleccion>
+                <Grafo>personapfihs.owl</Grafo>
+                <UrlTipoEntSolicitada>https://schema.org/Person</UrlTipoEntSolicitada>
+                <LinkARecurso IrAComunidad="true"></LinkARecurso>	
+                <PropsEntEdicion>
+                    <NameProp>https://schema.org/name</NameProp>                   
+                </PropsEntEdicion>
+                <PropsEntLectura>
+                    <Propiedad ID="https://schema.org/name" EntidadID="https://schema.org/Person">
+                        <AtrNombre xml:lang="es">Nombre</AtrNombre>
+                        <AtrNombreLectura xml:lang="es">Nombre</AtrNombreLectura>
+                        <AtrNombre xml:lang="en">Name</AtrNombre>
+                        <AtrNombreLectura xml:lang="en">Name</AtrNombreLectura>
+                    </Propiedad>                    
+                </PropsEntLectura>
+            </SeleccionEntidad>
+        </Propiedad>
+        <Propiedad ID="https://schema.org/streetAddress" EntidadID="https://schema.org/PostalAddress">
+            <AtrNombre xml:lang="es">Calle</AtrNombre>
+            <AtrNombreLectura xml:lang="es">Calle</AtrNombreLectura>
+            <AtrNombre xml:lang="en">Street</AtrNombre>
+            <AtrNombreLectura xml:lang="en">Street</AtrNombreLectura>
+        </Propiedad>
+        <Propiedad ID="https://schema.org/PostalCode" EntidadID="https://schema.org/PostalAddress">
+            <AtrNombre xml:lang="es">Código Postal</AtrNombre>
+            <AtrNombreLectura xml:lang="es">Código Postal</AtrNombreLectura>
+            <AtrNombre xml:lang="en">Postal Code</AtrNombre>
+            <AtrNombreLectura xml:lang="en">Postal Code</AtrNombreLectura>
+        </Propiedad>
+        <Propiedad ID="https://schema.org/postOfficeBoxNumber" EntidadID="https://schema.org/PostalAddress">
+            <AtrNombre xml:lang="es">Número</AtrNombre>
+            <AtrNombreLectura xml:lang="es">Número</AtrNombreLectura>
+            <AtrNombre xml:lang="en">Number</AtrNombre>
+            <AtrNombreLectura xml:lang="en">Number</AtrNombreLectura>
+        </Propiedad>
+        <Propiedad ID="https://schema.org/addressLocality" EntidadID="https://schema.org/PostalAddress">
+            <AtrNombre xml:lang="es">Ciudad</AtrNombre>
+            <AtrNombreLectura xml:lang="es">Ciudad</AtrNombreLectura>
+            <AtrNombre xml:lang="en">City</AtrNombre>
+            <AtrNombreLectura xml:lang="en">City</AtrNombreLectura>
+        </Propiedad>
+        <Propiedad ID="https://schema.org/addressCountry" EntidadID="https://schema.org/PostalAddress">
+            <AtrNombre xml:lang="es">País</AtrNombre>
+            <AtrNombreLectura xml:lang="es">País</AtrNombreLectura>
+            <AtrNombre xml:lang="en">Country</AtrNombre>
+            <AtrNombreLectura xml:lang="en">Country</AtrNombreLectura>
+        </Propiedad>
+        <Propiedad ID="https://schema.org/parentOrganization" EntidadID="https://schema.org/SportsClub">
+            <AtrNombre xml:lang="es">Historial de Equipos</AtrNombre>
+            <AtrNombreLectura xml:lang="es">Historial de Equipos</AtrNombreLectura>
+            <AtrNombre xml:lang="en">Historic Teams</AtrNombre>
+            <AtrNombreLectura xml:lang="en">Historic Teams</AtrNombreLectura>
+        </Propiedad>
+        <Propiedad ID="https://schema.org/location" EntidadID="https://schema.org/SportsClub">
+            <AtrNombre xml:lang="es">Ubicación</AtrNombre>
+            <AtrNombreLectura xml:lang="es">Ubicación</AtrNombreLectura>
+            <AtrNombre xml:lang="en">Location</AtrNombre>
+            <AtrNombreLectura xml:lang="en">Location</AtrNombreLectura>
+        </Propiedad>
+        <Propiedad ID="https://schema.org/logo" EntidadID="https://schema.org/SportsClub">
+            <AtrNombre>Logo</AtrNombre>
+            <AtrNombreLectura>Logo</AtrNombreLectura>
+            <MultiIdioma>false</MultiIdioma>
+            <TipoCampo>ImagenExterna</TipoCampo>
+        </Propiedad>
+        <Propiedad ID="https://schema.org/award" EntidadID="https://schema.org/SportsClub">
+            <AtrNombre xml:lang="es">Palmarés</AtrNombre>
+            <AtrNombreLectura xml:lang="es">Palmarés</AtrNombreLectura>
+            <AtrNombre xml:lang="en">Awards</AtrNombre>
+            <AtrNombreLectura xml:lang="en">Awards</AtrNombreLectura>
+        </Propiedad>
+        <Propiedad ID="https://schema.org/alternateName" EntidadID="https://schema.org/SportsClub">
+            <AtrNombre xml:lang="es">Alias</AtrNombre>
+            <AtrNombreLectura xml:lang="es">Alias</AtrNombreLectura>
+            <AtrNombre xml:lang="en">Also Known As (AKA)</AtrNombre>
+            <AtrNombreLectura xml:lang="en">Also Known As (AKA)</AtrNombreLectura>
+        </Propiedad>
+        <Propiedad ID="https://schema.org/description" EntidadID="https://schema.org/SportsClub">
+            <AtrNombre xml:lang="es">Historia del Club</AtrNombre>
+            <AtrNombreLectura xml:lang="es">Historia del Club</AtrNombreLectura>
+            <AtrNombre xml:lang="en">Club's History</AtrNombre>
+            <AtrNombreLectura xml:lang="en">Club's History</AtrNombreLectura>
+        </Propiedad>
+        <Propiedad ID="https://schema.org/foundingDate" EntidadID="https://schema.org/SportsClub">
+            <AtrNombre xml:lang="es">Fecha Fundación del Club</AtrNombre>
+            <AtrNombreLectura xml:lang="es">Fecha Fundación del Club</AtrNombreLectura>
+            <AtrNombre xml:lang="en">Club's Founding Date</AtrNombre>
+            <AtrNombreLectura xml:lang="en">Club's Founding Date</AtrNombreLectura>
+        </Propiedad>
+        <Propiedad ID="https://schema.org/extended/league" EntidadID="https://schema.org/SportsClub">
+            <AtrNombre xml:lang="es">League</AtrNombre>
+            <AtrNombreLectura xml:lang="es">League</AtrNombreLectura>
+            <AtrNombre xml:lang="en">League</AtrNombre>
+            <AtrNombreLectura xml:lang="en">League</AtrNombreLectura>
+        </Propiedad>
+        <Propiedad ID="https://schema.org/name" EntidadID="https://schema.org/SportsClub">
+            <AtrNombre xml:lang="en">Name</AtrNombre>
+            <AtrNombreLectura xml:lang="en">Name</AtrNombreLectura>
+            <AtrNombre xml:lang="es">Nombre</AtrNombre>
+            <AtrNombreLectura xml:lang="es">Nombre</AtrNombreLectura>
+        </Propiedad>
+        <Propiedad ID="https://schema.org/identifier" EntidadID="https://schema.org/SportsClub">
+            <AtrNombre >Id</AtrNombre>
+            <AtrNombreLectura >Id</AtrNombreLectura>
+        </Propiedad>
+    </EspefPropiedad>
+    <EspefEntidad>
+        <Entidad ID="https://schema.org/SportsTeam">
+            <AtrNombre>https://schema.org/SportsTeam</AtrNombre>
+            <AtrNombreLectura>https://schema.org/SportsTeam</AtrNombreLectura>
+            <OrdenEntidad>
+                <Grupo class="formtheme02">
+                    <Grupo class="fieldset">
+                        <Grupo Tipo="fieldset" class="mediumLabels">
+                            <NameProp>https://schema.org/extended/season</NameProp>
+                            <NameProp>https://schema.org/coach</NameProp>
+                            <NameProp>https://schema.org/athlete</NameProp>
+                        </Grupo>
+                    </Grupo>
+                </Grupo>
+            </OrdenEntidad>
+            <OrdenEntidadLectura>
+                <Grupo classLectura="contentGroup contenidoPrincipal">
+                    <Grupo classLectura="group title">
+                        <Grupo Tipo="titulo">
+                            <NameProp>@@@TITULO</NameProp>
+                        </Grupo>
+                        <Grupo Tipo="subtitulo">
+                            <NameProp>@@@SUBTITULO</NameProp>
+                        </Grupo>
+                    </Grupo>
+                </Grupo>
+                <Grupo classLectura="group content semanticView">
+                    <Grupo classLectura="group group_info">
+                        <AtrNombreGrupo>Propiedades</AtrNombreGrupo>
+                        <Grupo classLectura="contentGroup">
+                            <NameProp>https://schema.org/extended/season</NameProp>
+                            <NameProp>https://schema.org/coach</NameProp>
+                            <NameProp>https://schema.org/athlete</NameProp>                                                        
+                           
+                        </Grupo>
+                    </Grupo>
+                </Grupo>
+            </OrdenEntidadLectura>
+        </Entidad>
+        <Entidad ID="https://schema.org/PostalAddress">
+            <AtrNombre>https://schema.org/PostalAddress</AtrNombre>
+            <AtrNombreLectura>https://schema.org/PostalAddress</AtrNombreLectura>
+            <OrdenEntidad>
+                <Grupo class="formtheme02">
+                    <Grupo class="fieldset">
+                        <Grupo Tipo="fieldset" class="mediumLabels">
+                            <NameProp>https://schema.org/streetAddress</NameProp>
+                            <NameProp>https://schema.org/PostalCode</NameProp>
+                            <NameProp>https://schema.org/postOfficeBoxNumber</NameProp>
+                            <NameProp>https://schema.org/addressLocality</NameProp>
+                            <NameProp>https://schema.org/addressCountry</NameProp>
+                        </Grupo>
+                    </Grupo>
+                </Grupo>
+            </OrdenEntidad>
+            <OrdenEntidadLectura>
+                <Grupo classLectura="contentGroup contenidoPrincipal">
+                    <Grupo classLectura="group title">
+                        <Grupo Tipo="titulo">
+                            <NameProp>@@@TITULO</NameProp>
+                        </Grupo>
+                        <Grupo Tipo="subtitulo">
+                            <NameProp>@@@SUBTITULO</NameProp>
+                        </Grupo>
+                    </Grupo>
+                </Grupo>
+                <Grupo classLectura="group content semanticView">
+                    <Grupo classLectura="group group_info">
+                        <AtrNombreGrupo>Propiedades</AtrNombreGrupo>
+                        <Grupo classLectura="contentGroup">
+                            <NameProp>https://schema.org/streetAddress</NameProp>
+                            <NameProp>https://schema.org/PostalCode</NameProp>
+                            <NameProp>https://schema.org/postOfficeBoxNumber</NameProp>
+                            <NameProp>https://schema.org/addressLocality</NameProp>
+                            <NameProp>https://schema.org/addressCountry</NameProp>
+                        </Grupo>
+                    </Grupo>
+                </Grupo>
+            </OrdenEntidadLectura>
+        </Entidad>
+        <Entidad ID="https://schema.org/SportsClub">
+            <AtrNombre>https://schema.org/SportsClub</AtrNombre>
+            <AtrNombreLectura>https://schema.org/SportsClub</AtrNombreLectura>
+            <OrdenEntidad>
+                <Grupo class="formtheme02">
+                    <Grupo class="fieldset">
+                        <Grupo Tipo="fieldset" class="mediumLabels">
+                           <NameProp>https://schema.org/name</NameProp>
+                            <NameProp>https://schema.org/logo</NameProp>
+                            <NameProp>https://schema.org/extended/league</NameProp>                            
+                            <NameProp>https://schema.org/location</NameProp>                            
+                            <NameProp>https://schema.org/award</NameProp>
+                            <NameProp>https://schema.org/alternateName</NameProp>
+                            <NameProp>https://schema.org/foundingDate</NameProp>
+                            <NameProp>https://schema.org/description</NameProp>
+                            <NameProp>https://schema.org/parentOrganization</NameProp>
+							 <NameProp>https://schema.org/extended/i_winner</NameProp> 
+							 <NameProp>https://schema.org/extended/i_participant</NameProp> 
+							 <NameProp>https://schema.org/extended/i_matches</NameProp> 
+							 
+                            
+                            
+                        </Grupo>
+                    </Grupo>
+                </Grupo>
+            </OrdenEntidad>
+            <OrdenEntidadLectura>
+                <Grupo classLectura="contentGroup contenidoPrincipal">
+                    <Grupo classLectura="group title">
+                        <Grupo Tipo="titulo">
+                            <NameProp>@@@TITULO</NameProp>
+                        </Grupo>
+                        <Grupo Tipo="subtitulo">
+                            <NameProp>@@@SUBTITULO</NameProp>
+                        </Grupo>
+                    </Grupo>
+                </Grupo>
+                <Grupo classLectura="group content semanticView">
+                    <Grupo classLectura="group group_info">
+                        <AtrNombreGrupo>Propiedades</AtrNombreGrupo>
+                        <Grupo classLectura="contentGroup">
+                            <NameProp>https://schema.org/name</NameProp>
+                            <NameProp>https://schema.org/logo</NameProp>
+                            <NameProp>https://schema.org/extended/league</NameProp>
+                            <NameProp>https://schema.org/location</NameProp>                            
+                            <NameProp>https://schema.org/award</NameProp>
+                            <NameProp>https://schema.org/alternateName</NameProp>
+                            <NameProp>https://schema.org/description</NameProp>
+                            <NameProp>https://schema.org/foundingDate</NameProp>   
+                            <NameProp>https://schema.org/parentOrganization</NameProp>
+ <NameProp>https://schema.org/extended/i_winner</NameProp> 
+							 <NameProp>https://schema.org/extended/i_participant</NameProp> 
+							 <NameProp>https://schema.org/extended/i_matches</NameProp>							
+                        </Grupo>
+                    </Grupo>
+                </Grupo>
+            </OrdenEntidadLectura>
+        </Entidad>
+    </EspefEntidad>
+</config>

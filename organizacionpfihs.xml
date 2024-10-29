@@ -1,0 +1,33 @@
+<config>
+    <ConfiguracionGeneral>
+        <namespace>organizacionpfihs</namespace>
+        <idiomasOnto>
+            <idiomaOnto>es</idiomaOnto>
+        </idiomasOnto>
+        <TituloDoc EntidadID="https://schema.org/Organization">https://schema.org/name</TituloDoc>
+        <HtmlNuevo>true</HtmlNuevo>
+    </ConfiguracionGeneral>
+    <EspefPropiedad>
+        <Propiedad  ID="https://schema.org/name" EntidadID="https://schema.org/Organization">
+            <AtrNombre xml:lang="en">Name</AtrNombre>
+            <AtrNombreLectura xml:lang="en">Name</AtrNombreLectura>
+            <AtrNombre xml:lang="es">Nombre</AtrNombre>
+            <AtrNombreLectura xml:lang="es">Nombre</AtrNombreLectura>
+        </Propiedad>
+    </EspefPropiedad>
+    <EspefEntidad>
+        <Entidad  ID="https://schema.org/Organization">
+            <AtrNombre>https://schema.org/Organization</AtrNombre>
+            <AtrNombreLectura>https://schema.org/Organization</AtrNombreLectura>
+            <OrdenEntidad>
+                <Grupo class="formtheme02">
+                    <Grupo class="fieldset">
+                        <Grupo Tipo="fieldset" class="mediumLabels">
+                            <NameProp>https://schema.org/name</NameProp>
+                        </Grupo>
+                    </Grupo>
+                </Grupo>
+            </OrdenEntidad>
+        </Entidad>
+    </EspefEntidad>
+</config>

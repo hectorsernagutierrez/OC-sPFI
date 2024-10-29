@@ -1,0 +1,450 @@
+<config>
+    <ConfiguracionGeneral>
+        <namespace>partidopfihs</namespace>
+        <idiomasOnto>
+            <idiomaOnto>es</idiomaOnto>
+        </idiomasOnto>
+        <ocultarTituloDescpImgDoc></ocultarTituloDescpImgDoc>
+        <TituloDoc EntidadID="https://schema.org/SportsEvent">https://schema.org/extended/namePartido</TituloDoc>
+        <DescripcionDoc EntidadID="https://schema.org/SportsEvent">https://schema.org/extended/namePartido</DescripcionDoc>
+        <HtmlNuevo>true</HtmlNuevo>
+    </ConfiguracionGeneral>
+    <EspefPropiedad>
+        <Propiedad  ID="https://schema.org/about" EntidadID="https://schema.org/Event">
+            <AtrNombre xml:lang="en">Type</AtrNombre>
+            <AtrNombreLectura xml:lang="en">Type</AtrNombreLectura>
+            <AtrNombre xml:lang="es">Tipo</AtrNombre>
+            <AtrNombreLectura xml:lang="es">Tipo</AtrNombreLectura>
+            <SeleccionEntidad>
+                <TipoSeleccion>Combo</TipoSeleccion>
+                <Grafo>tipopfihs.owl</Grafo>
+                <UrlTipoEntSolicitada>https://schema.org/Thing</UrlTipoEntSolicitada>
+                <PropsEntEdicion>
+                    <NameProp>https://schema.org/name</NameProp>
+                </PropsEntEdicion>
+                <PropsEntLectura>
+                    <Propiedad ID="https://schema.org/name" EntidadID="https://schema.org/Thing">
+                        <AtrNombre xml:lang="es">Nombre</AtrNombre>
+                        <AtrNombreLectura xml:lang="es">Nombre</AtrNombreLectura>
+                        <AtrNombre xml:lang="en">Name</AtrNombre>
+                        <AtrNombreLectura xml:lang="en">Name</AtrNombreLectura>
+                    </Propiedad>                    
+                </PropsEntLectura>
+            </SeleccionEntidad>
+        </Propiedad>
+        <Propiedad  ID="https://schema.org/actor" EntidadID="https://schema.org/Event">
+            <AtrNombre xml:lang="es">Jugador Involucrado</AtrNombre>
+            <AtrNombreLectura xml:lang="es">Jugador Involucrado</AtrNombreLectura>
+            <AtrNombre xml:lang="en">Player Involved</AtrNombre>
+            <AtrNombreLectura xml:lang="en">Player Involved</AtrNombreLectura>
+            <SeleccionEntidad>
+                <TipoSeleccion>Autocompletar</TipoSeleccion>
+                <Grafo>personapfihs.owl</Grafo>
+                <UrlTipoEntSolicitada>https://schema.org/Person</UrlTipoEntSolicitada>
+                <LinkARecurso IrAComunidad="true"></LinkARecurso>
+                <PropsEntEdicion>
+                    <NameProp>https://schema.org/name</NameProp>
+                </PropsEntEdicion>
+                <PropsEntLectura>
+                    <Propiedad ID="https://schema.org/name" EntidadID="https://schema.org/Person">
+                        <AtrNombre xml:lang="es">Nombre</AtrNombre>
+                        <AtrNombreLectura xml:lang="es">Nombre</AtrNombreLectura>
+                        <AtrNombre xml:lang="en">Name</AtrNombre>
+                        <AtrNombreLectura xml:lang="en">Name</AtrNombreLectura>
+                    </Propiedad>                    
+                </PropsEntLectura>
+            </SeleccionEntidad> 
+        </Propiedad>
+		
+		<Propiedad  ID="https://schema.org/extended/i_edition" EntidadID="https://schema.org/SportsEvent">
+            <AtrNombre xml:lang="en">edition</AtrNombre>
+            <AtrNombreLectura xml:lang="en">edition</AtrNombreLectura>
+            <AtrNombre xml:lang="es">edicion</AtrNombre>
+            <AtrNombreLectura xml:lang="es">edicion</AtrNombreLectura>
+            <SeleccionEntidad>						
+                <TipoSeleccion>Autocompletar</TipoSeleccion>			
+                <LinkARecurso IrAComunidad="true"></LinkARecurso>				
+                <Grafo>torneoedicionpfihs.owl</Grafo>
+                <UrlTipoEntSolicitada>https://schema.org/extended/SportsTournamentEdition</UrlTipoEntSolicitada>
+                <PropsEntEdicion>
+                    <NameProp>https://schema.org/name</NameProp>
+                </PropsEntEdicion>
+                <PropsEntLectura>
+                     <Propiedad  ID="https://schema.org/name" EntidadID="https://schema.org/extended/SportsTournamentEdition">
+            <AtrNombre xml:lang="es">Nombre</AtrNombre>
+            <AtrNombreLectura xml:lang="es">Nombre</AtrNombreLectura>
+            <AtrNombre xml:lang="en">Name</AtrNombre>
+            <AtrNombreLectura xml:lang="en">Name</AtrNombreLectura>
+        </Propiedad>
+                </PropsEntLectura>
+                <Reciproca></Reciproca>	
+                <!-- Consulta para obtener los autores de un determindado documento (el que estoy consulando) -->
+                <ConsultaReciproca><![CDATA[SELECT DISTINCT(?edicion)
+                    WHERE {
+                    ?edicion a <https://schema.org/extended/SportsTournamentEdition>. 
+                    ?edicion <https://schema.org/extended/subEvent> ?partido 
+                    FILTER (?partido = @EntidadID@)}]]></ConsultaReciproca>
+            </SeleccionEntidad>
+        </Propiedad>
+		
+		
+		
+		
+		
+		
+		
+        <Propiedad  ID="https://schema.org/extended/Minute" EntidadID="https://schema.org/Event">
+            <AtrNombre>min.</AtrNombre>
+            <AtrNombreLectura>min.</AtrNombreLectura>
+        </Propiedad>
+        <Propiedad  ID="https://schema.org/extended/identifierevento" EntidadID="https://schema.org/Event">
+            <AtrNombre>https://schema.org/extended/identifierevento</AtrNombre>
+            <AtrNombreLectura>https://schema.org/extended/identifierevento</AtrNombreLectura>
+        </Propiedad>
+        <Propiedad  ID="https://schema.org/coach" EntidadID="https://schema.org/SportsTeam">
+            <AtrNombre xml:lang="en">Coach</AtrNombre>
+            <AtrNombreLectura xml:lang="en">Coach</AtrNombreLectura>
+            <AtrNombre xml:lang="es">Entrenador</AtrNombre>
+            <AtrNombreLectura xml:lang="es">Entrenador</AtrNombreLectura>
+            <SeleccionEntidad>
+                <TipoSeleccion>Autocompletar</TipoSeleccion>
+                <Grafo>personapfihs.owl</Grafo>
+                <UrlTipoEntSolicitada>https://schema.org/Person</UrlTipoEntSolicitada>
+                <LinkARecurso IrAComunidad="true"></LinkARecurso>
+                <PropsEntEdicion>
+                    <NameProp>https://schema.org/name</NameProp>
+                </PropsEntEdicion>
+                <PropsEntLectura>
+                    <Propiedad ID="https://schema.org/name" EntidadID="https://schema.org/Person">
+                        <AtrNombre xml:lang="es">Nombre</AtrNombre>
+                        <AtrNombreLectura xml:lang="es">Nombre</AtrNombreLectura>
+                        <AtrNombre xml:lang="en">Name</AtrNombre>
+                        <AtrNombreLectura xml:lang="en">Name</AtrNombreLectura>
+                    </Propiedad>                               
+                </PropsEntLectura>
+            </SeleccionEntidad>
+        </Propiedad>
+        <Propiedad  ID="https://schema.org/athlete" EntidadID="https://schema.org/SportsTeam">
+            <AtrNombre xml:lang="es">Jugadores</AtrNombre>
+            <AtrNombreLectura xml:lang="es">Jugadores</AtrNombreLectura>
+            <AtrNombre xml:lang="en">Players</AtrNombre>
+            <AtrNombreLectura xml:lang="en">Players</AtrNombreLectura>
+        </Propiedad>
+        <Propiedad  ID="https://schema.org/subOrganization" EntidadID="https://schema.org/SportsTeam">
+            <AtrNombre>Club:</AtrNombre>
+            <AtrNombreLectura>Club:</AtrNombreLectura>
+            <SeleccionEntidad>
+                <TipoSeleccion>Autocompletar</TipoSeleccion>
+                <Grafo>clubpfihs.owl</Grafo>
+                <UrlTipoEntSolicitada>https://schema.org/SportsClub</UrlTipoEntSolicitada>
+                <LinkARecurso IrAComunidad="true"></LinkARecurso>
+                <PropsEntEdicion>
+                    <NameProp>https://schema.org/name</NameProp>
+                </PropsEntEdicion>
+                <PropsEntLectura>
+                    <Propiedad ID="https://schema.org/name" EntidadID="https://schema.org/SportsClub">
+                        <AtrNombre xml:lang="es">Nombre</AtrNombre>
+                        <AtrNombreLectura xml:lang="es">Nombre</AtrNombreLectura>
+                        <AtrNombre xml:lang="en">Name</AtrNombre>
+                        <AtrNombreLectura xml:lang="en">Name</AtrNombreLectura>
+                    </Propiedad>                                      
+                </PropsEntLectura>
+            </SeleccionEntidad>
+        </Propiedad>
+        <Propiedad  ID="https://schema.org/extended/classification" EntidadID="https://schema.org/SportsTeam">
+            <AtrNombre>Clas.</AtrNombre>
+            <AtrNombreLectura>Clas.</AtrNombreLectura>
+        </Propiedad>
+        <Propiedad  ID="https://schema.org/extended/type" EntidadID="https://schema.org/extended/PersonLinedUp">
+            <AtrNombre xml:lang="en">Type of Line Up</AtrNombre>
+            <AtrNombreLectura xml:lang="en">Type of Line Up</AtrNombreLectura>
+            <AtrNombre xml:lang="es">Tipado de Alineación</AtrNombre>
+            <AtrNombreLectura xml:lang="es">Tipado de Alineación</AtrNombreLectura>
+            <SeleccionEntidad>
+                <TipoSeleccion>Combo</TipoSeleccion>
+                <Grafo>tipopfihs.owl</Grafo>
+                <UrlTipoEntSolicitada>https://schema.org/Thing</UrlTipoEntSolicitada>
+                <PropsEntEdicion>
+                    <NameProp>https://schema.org/name</NameProp>
+                </PropsEntEdicion>
+                <PropsEntLectura>
+                    <Propiedad ID="https://schema.org/name" EntidadID="https://schema.org/Thing">
+                        <AtrNombre xml:lang="es">Nombre</AtrNombre>
+                        <AtrNombreLectura xml:lang="es">Nombre</AtrNombreLectura>
+                        <AtrNombre xml:lang="en">Name</AtrNombre>
+                        <AtrNombreLectura xml:lang="en">Name</AtrNombreLectura>
+                    </Propiedad>                    
+                </PropsEntLectura>
+            </SeleccionEntidad>
+        </Propiedad>
+        <Propiedad  ID="https://schema.org/extended/player" EntidadID="https://schema.org/extended/PersonLinedUp">
+            <AtrNombre xml:lang="en">Player</AtrNombre>
+            <AtrNombreLectura xml:lang="en">Player</AtrNombreLectura>
+            <AtrNombre xml:lang="es">Jugador</AtrNombre>
+            <AtrNombreLectura xml:lang="es">Jugador</AtrNombreLectura>
+            <SeleccionEntidad>
+                <TipoSeleccion>Autocompletar</TipoSeleccion>
+                <Grafo>personapfihs.owl</Grafo>
+                <UrlTipoEntSolicitada>https://schema.org/Person</UrlTipoEntSolicitada>
+                <LinkARecurso IrAComunidad="true"></LinkARecurso>
+                <PropsEntEdicion>
+                    <NameProp>https://schema.org/name</NameProp>
+                    <LinkARecurso IrAComunidad="true"></LinkARecurso>
+                </PropsEntEdicion>
+                <PropsEntLectura>
+                    <Propiedad ID="https://schema.org/name" EntidadID="https://schema.org/Person">
+                        <AtrNombre xml:lang="es">Nombre</AtrNombre>
+                        <AtrNombreLectura xml:lang="es">Nombre</AtrNombreLectura>
+                        <AtrNombre xml:lang="en">Name</AtrNombre>
+                        <AtrNombreLectura xml:lang="en">Name</AtrNombreLectura>
+                    </Propiedad>                    
+                </PropsEntLectura>
+            </SeleccionEntidad>    
+        </Propiedad>
+        <Propiedad  ID="https://schema.org/extended/position" EntidadID="https://schema.org/extended/PersonLinedUp">
+            <AtrNombre xml:lang="en">Field Position</AtrNombre>
+            <AtrNombreLectura xml:lang="en">Field Position</AtrNombreLectura>
+            <AtrNombre xml:lang="es">Posición sobre el Campo</AtrNombre>
+            <AtrNombreLectura xml:lang="es">Posición sobre el Campo</AtrNombreLectura>
+            <SeleccionEntidad>
+                <TipoSeleccion>Combo</TipoSeleccion>
+                <Grafo>posicionpfihs.owl</Grafo>
+                <UrlTipoEntSolicitada>https://schema.org/extended/Position</UrlTipoEntSolicitada>
+                <PropsEntEdicion>
+                    <NameProp>https://schema.org/name</NameProp>
+                </PropsEntEdicion>
+                <PropsEntLectura>
+                    <Propiedad ID="https://schema.org/name" EntidadID="https://schema.org/extended/Position">
+                        <AtrNombre xml:lang="es">Nombre</AtrNombre>
+                        <AtrNombreLectura xml:lang="es">Nombre</AtrNombreLectura>
+                        <AtrNombre xml:lang="en">Name</AtrNombre>
+                        <AtrNombreLectura xml:lang="en">Name</AtrNombreLectura>
+                    </Propiedad>                    
+                </PropsEntLectura>
+            </SeleccionEntidad>
+        </Propiedad>
+        <Propiedad  ID="https://schema.org/extended/bibNumber" EntidadID="https://schema.org/extended/PersonLinedUp">
+            <AtrNombre xml:lang="en">Bib Number</AtrNombre>
+            <AtrNombreLectura xml:lang="en">Bib Number</AtrNombreLectura>
+            <AtrNombre xml:lang="es">Dorsal</AtrNombre>
+            <AtrNombreLectura xml:lang="es">Dorsal</AtrNombreLectura>
+        </Propiedad>
+        <Propiedad  ID="https://schema.org/awayTeam" EntidadID="https://schema.org/SportsEvent">
+            <AtrNombre>https://schema.org/awayTeam</AtrNombre>
+            <AtrNombreLectura>https://schema.org/awayTeam</AtrNombreLectura>
+        </Propiedad>
+        <Propiedad  ID="https://schema.org/homeTeam" EntidadID="https://schema.org/SportsEvent">
+            <AtrNombre>Local</AtrNombre>
+            <AtrNombreLectura>Local</AtrNombreLectura>
+        </Propiedad>
+        <Propiedad  ID="https://schema.org/subEvent" EntidadID="https://schema.org/SportsEvent">
+            <AtrNombre xml:lang="en">Match events</AtrNombre>
+            <AtrNombreLectura xml:lang="en">Match events</AtrNombreLectura>
+            <AtrNombre xml:lang="es">Eventos del partido</AtrNombre>
+            <AtrNombreLectura xml:lang="es">Eventos del partido</AtrNombreLectura>
+        </Propiedad>
+        <Propiedad  ID="https://schema.org/date" EntidadID="https://schema.org/SportsEvent">
+            <AtrNombre xml:lang="es">Fecha</AtrNombre>
+            <AtrNombreLectura xml:lang="es">Fecha</AtrNombreLectura>
+            <AtrNombre xml:lang="en">Date</AtrNombre>
+            <AtrNombreLectura xml:lang="en">Date</AtrNombreLectura>
+            <FormatoFechaLibre>dd/MM/yyyy</FormatoFechaLibre>
+        </Propiedad>
+        <Propiedad  ID="https://schema.org/extended/namePartido" EntidadID="https://schema.org/SportsEvent">
+            <AtrNombre xml:lang="es">Name partido</AtrNombre>
+            <AtrNombreLectura xml:lang="es">Name partido</AtrNombreLectura>
+            <AtrNombre xml:lang="en">Nombre del Partido</AtrNombre>
+            <AtrNombreLectura xml:lang="en">Nombre del Partido</AtrNombreLectura>
+        </Propiedad>
+        <Propiedad  ID="https://schema.org/extended/referee" EntidadID="https://schema.org/SportsEvent">
+            <AtrNombre xml:lang="en">Refere</AtrNombre>
+            <AtrNombreLectura xml:lang="en">Refere</AtrNombreLectura>
+            <AtrNombre xml:lang="es">Arbitro</AtrNombre>
+            <AtrNombreLectura xml:lang="es">Arbitro</AtrNombreLectura>
+        </Propiedad>
+        <Propiedad  ID="https://schema.org/extended/identifierpartido" EntidadID="https://schema.org/SportsEvent">
+            <AtrNombre>https://schema.org/extended/identifierpartido</AtrNombre>
+            <AtrNombreLectura>https://schema.org/extended/identifierpartido</AtrNombreLectura>
+        </Propiedad>
+        <Propiedad  ID="https://schema.org/extended/tournamentId" EntidadID="https://schema.org/SportsEvent">
+            <AtrNombre>https://schema.org/extended/tournamentId</AtrNombre>
+            <AtrNombreLectura>https://schema.org/extended/tournamentId</AtrNombreLectura>
+        </Propiedad>
+        <Propiedad  ID="https://schema.org/extended/result" EntidadID="https://schema.org/SportsEvent">
+            <AtrNombre xml:lang="en">Result</AtrNombre>
+            <AtrNombreLectura xml:lang="en">Result</AtrNombreLectura>
+            <AtrNombre xml:lang="es">Resultado</AtrNombre>
+            <AtrNombreLectura xml:lang="es">Resultado</AtrNombreLectura>
+        </Propiedad>
+    </EspefPropiedad>
+    <EspefEntidad>
+        <Entidad  ID="https://schema.org/Event">
+            <AtrNombre>https://schema.org/Event</AtrNombre>
+            <AtrNombreLectura>https://schema.org/Event</AtrNombreLectura>
+            <OrdenEntidad>
+                <Grupo class="formtheme02">
+                    <Grupo class="fieldset">
+                        <Grupo Tipo="fieldset" class="mediumLabels">
+                            <NameProp>https://schema.org/about</NameProp> 
+                            <NameProp>https://schema.org/actor</NameProp> 
+                            <NameProp>https://schema.org/extended/Minute</NameProp> 
+                            <NameProp>https://schema.org/extended/identifierevento</NameProp>
+                        </Grupo>
+                    </Grupo>
+                </Grupo>
+            </OrdenEntidad>
+            <OrdenEntidadLectura>
+                <Grupo classLectura="contentGroup contenidoPrincipal">
+                    <Grupo classLectura="group title">
+                        <Grupo Tipo="titulo">
+                            <NameProp>@@@TITULO</NameProp>
+                        </Grupo>
+                        <Grupo Tipo="subtitulo">
+                            <NameProp>@@@SUBTITULO</NameProp>
+                        </Grupo>
+                    </Grupo>
+                </Grupo>
+                <Grupo classLectura="group content semanticView">
+                    <Grupo classLectura="group group_info">
+                        <AtrNombreGrupo>Propiedades</AtrNombreGrupo>
+                        <Grupo classLectura="contentGroup">
+                            <NameProp>https://schema.org/about</NameProp> 
+                            <NameProp>https://schema.org/actor</NameProp> 
+                            <NameProp>https://schema.org/extended/Minute</NameProp> 
+                            <NameProp>https://schema.org/extended/identifierevento</NameProp>
+                        </Grupo>
+                    </Grupo>
+                </Grupo>
+            </OrdenEntidadLectura>
+        </Entidad>
+        <Entidad  ID="https://schema.org/SportsTeam">
+            <AtrNombre>https://schema.org/SportsTeam</AtrNombre>
+            <AtrNombreLectura>https://schema.org/SportsTeam</AtrNombreLectura>
+            <OrdenEntidad>
+                <Grupo class="formtheme02">
+                    <Grupo class="fieldset">
+                        <Grupo Tipo="fieldset" class="mediumLabels">
+                            <NameProp>https://schema.org/coach</NameProp> 
+                            <NameProp>https://schema.org/athlete</NameProp> 
+                            <NameProp>https://schema.org/subOrganization</NameProp> 
+                            <NameProp>https://schema.org/extended/classification</NameProp>
+                        </Grupo>
+                    </Grupo>
+                </Grupo>
+            </OrdenEntidad>
+            <OrdenEntidadLectura>
+                <Grupo classLectura="contentGroup contenidoPrincipal">
+                    <Grupo classLectura="group title">
+                        <Grupo Tipo="titulo">
+                            <NameProp>@@@TITULO</NameProp>
+                        </Grupo>
+                        <Grupo Tipo="subtitulo">
+                            <NameProp>@@@SUBTITULO</NameProp>
+                        </Grupo>
+                    </Grupo>
+                </Grupo>
+                <Grupo classLectura="group content semanticView">
+                    <Grupo classLectura="group group_info">
+                        <AtrNombreGrupo>Propiedades</AtrNombreGrupo>
+                        <Grupo classLectura="contentGroup">
+                            <NameProp>https://schema.org/coach</NameProp> 
+                            <NameProp>https://schema.org/athlete</NameProp> 
+                            <NameProp>https://schema.org/subOrganization</NameProp> 
+                            <NameProp>https://schema.org/extended/classification</NameProp>
+                        </Grupo>
+                    </Grupo>
+                </Grupo>
+            </OrdenEntidadLectura>
+        </Entidad>
+        <Entidad  ID="https://schema.org/extended/PersonLinedUp">
+            <AtrNombre>https://schema.org/extended/PersonLinedUp</AtrNombre>
+            <AtrNombreLectura>https://schema.org/extended/PersonLinedUp</AtrNombreLectura>
+            <OrdenEntidad>
+                <Grupo class="formtheme02">
+                    <Grupo class="fieldset">
+                        <Grupo Tipo="fieldset" class="mediumLabels">
+                            <NameProp>https://schema.org/extended/type</NameProp> 
+                            <NameProp>https://schema.org/extended/player</NameProp> 
+                            <NameProp>https://schema.org/extended/position</NameProp> 
+                            <NameProp>https://schema.org/extended/bibNumber</NameProp>
+                        </Grupo>
+                    </Grupo>
+                </Grupo>
+            </OrdenEntidad>
+            <OrdenEntidadLectura>
+                <Grupo classLectura="contentGroup contenidoPrincipal">
+                    <Grupo classLectura="group title">
+                        <Grupo Tipo="titulo">
+                            <NameProp>@@@TITULO</NameProp>
+                        </Grupo>
+                        <Grupo Tipo="subtitulo">
+                            <NameProp>@@@SUBTITULO</NameProp>
+                        </Grupo>
+                    </Grupo>
+                </Grupo>
+                <Grupo classLectura="group content semanticView">
+                    <Grupo classLectura="group group_info">
+                        <AtrNombreGrupo>Propiedades</AtrNombreGrupo>
+                        <Grupo classLectura="contentGroup">
+                            <NameProp>https://schema.org/extended/type</NameProp> 
+                            <NameProp>https://schema.org/extended/player</NameProp> 
+                            <NameProp>https://schema.org/extended/position</NameProp> 
+                            <NameProp>https://schema.org/extended/bibNumber</NameProp>
+                        </Grupo>
+                    </Grupo>
+                </Grupo>
+            </OrdenEntidadLectura>
+        </Entidad>
+        <Entidad  ID="https://schema.org/SportsEvent">
+            <AtrNombre>https://schema.org/SportsEvent</AtrNombre>
+            <AtrNombreLectura>https://schema.org/SportsEvent</AtrNombreLectura>
+            <OrdenEntidad>
+                <Grupo class="formtheme02">
+                    <Grupo class="fieldset">
+                        <Grupo Tipo="fieldset" class="mediumLabels">
+                            <NameProp>https://schema.org/awayTeam</NameProp> 
+                            <NameProp>https://schema.org/homeTeam</NameProp> 
+                            <NameProp>https://schema.org/subEvent</NameProp> 
+                            <NameProp>https://schema.org/date</NameProp> 
+                            <NameProp>https://schema.org/extended/namePartido</NameProp> 
+                            <NameProp>https://schema.org/extended/referee</NameProp> 
+                            <NameProp>https://schema.org/extended/identifierpartido</NameProp> 
+                            <NameProp>https://schema.org/extended/tournamentId</NameProp> 
+							 <NameProp>https://schema.org/extended/i_edition</NameProp> 
+                            <NameProp>https://schema.org/extended/result</NameProp>
+                        </Grupo>
+                    </Grupo>
+                </Grupo>
+            </OrdenEntidad>
+            <OrdenEntidadLectura>
+                <Grupo classLectura="contentGroup contenidoPrincipal">
+                    <Grupo classLectura="group title">
+                        <Grupo Tipo="titulo">
+                            <NameProp>@@@TITULO</NameProp>
+                        </Grupo>
+                        <Grupo Tipo="subtitulo">
+                            <NameProp>@@@SUBTITULO</NameProp>
+                        </Grupo>
+                    </Grupo>
+                </Grupo>
+                <Grupo classLectura="group content semanticView">
+                    <Grupo classLectura="group group_info">
+                        <AtrNombreGrupo>Propiedades</AtrNombreGrupo>
+                        <Grupo classLectura="contentGroup">
+                            <NameProp>https://schema.org/awayTeam</NameProp> 
+                            <NameProp>https://schema.org/homeTeam</NameProp> 
+                            <NameProp>https://schema.org/subEvent</NameProp> 
+                            <NameProp>https://schema.org/date</NameProp> 
+                            <NameProp>https://schema.org/extended/namePartido</NameProp> 
+                            <NameProp>https://schema.org/extended/referee</NameProp> 
+                            <NameProp>https://schema.org/extended/identifierpartido</NameProp> 
+                            <NameProp>https://schema.org/extended/tournamentId</NameProp> 
+							 <NameProp>https://schema.org/extended/i_edition</NameProp> 
+                            <NameProp>https://schema.org/extended/result</NameProp>
+                        </Grupo>
+                    </Grupo>
+                </Grupo>
+            </OrdenEntidadLectura>
+        </Entidad>
+    </EspefEntidad>
+</config>
